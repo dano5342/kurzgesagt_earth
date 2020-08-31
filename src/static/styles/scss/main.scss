@@ -18,7 +18,7 @@ $bg: #03081b;
 }
 
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 .header {
@@ -49,6 +49,7 @@ p {
     font-weight: 100;
     font-size: 0.75em;
     letter-spacing: 2px;
+
 }
 
 .wrapper {
@@ -57,14 +58,13 @@ p {
     margin: 0 auto;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 }
-
-
 
 .earth {
     position: relative;
     width: 30vw;
-    height: 30vh;
+    height: 30vw;
     background: $earth-blue;
     border: solid 1vw $earth-outline-blue;
     border-radius: 50%;
@@ -72,24 +72,6 @@ p {
     overflow: hidden;
     @extend %centerElement;
 
-}
-
-.earth-shadow-container {
-    position: absolute;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.earth-shadow {
-    position: absolute;
-    left: -50%;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 50%;
-    z-index: 1000;
 }
 
 .earth-aura {
@@ -130,6 +112,23 @@ p {
 
 }
 
+.earth-shadow-container {
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.earth-shadow {
+    position: absolute;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    z-index: 1000;
+}
 
 .bg {
     position: absolute;
@@ -149,8 +148,8 @@ p {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 450;
     @include animation(clouds, 10s);
+    z-index: 450;
 
     .lines-1 {
         position: absolute;
@@ -228,6 +227,7 @@ p {
         }
     }
 
+
 }
 
 .clouds-glob-1 {
@@ -252,7 +252,6 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 4;
     @include animation(trees, 15s);
 
     .line-1 {
@@ -325,8 +324,21 @@ p {
     }
 }
 
+.stars {
+    background: rgba(255, 255, 255, 0.8);
+}
 
+.large-stars {
+    background: rgba(255, 255, 255, 0.75);
+}
 
+.stars,
+.large-stars {
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+}
 
 @keyframes clouds {
     0% {
